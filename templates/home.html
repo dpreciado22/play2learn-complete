@@ -1,0 +1,38 @@
+{% extends "_base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block main %}
+<div class="text-center">
+  <h1 class="mb-4">Welcome to Play2Learn!</h1>
+  <p class="lead mb-5">Practice math, challenge your word skills, and track your progress while having fun.</p>
+
+  <div class="row justify-content-center">
+    <div class="col-md-4">
+      <div class="card shadow-sm mb-4">
+        <div class="card-body">
+          <h5 class="card-title">Math Facts</h5>
+          <p class="card-text">Sharpen your skills in addition, subtraction, multiplication, and division.</p>
+          <a href="{% url 'math-facts' %}" class="btn btn-primary">Play Now</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card shadow-sm mb-4">
+        <div class="card-body">
+          <h5 class="card-title">Anagram Hunt</h5>
+          <p class="card-text">Test your vocabulary by finding as many anagrams as you can before time runs out.</p>
+          <a href="{% url 'anagram-hunt' %}" class="btn btn-primary">Play Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="mt-4">
+    <a href="{% url 'leaderboard' %}" class="btn btn-outline-secondary">View Leaderboards</a>
+    <a href="{% url 'reviews' %}" class="btn btn-outline-secondary">See Reviews</a>
+    <a href="{% url 'contact' %}" class="btn btn-outline-secondary">Contact Us</a>
+  </p>
+</div>
+{% endblock %}
