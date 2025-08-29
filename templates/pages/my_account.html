@@ -2,5 +2,5 @@
 {% block title %}My Account{% endblock %}
 {% block main %}
 <h2>My Account</h2>
-<p>Welcome, {{ user.username }}.</p>
+<form method="post">{% csrf_token %}{{ form.as_p }}<button class="btn btn-primary">Save</button></form>
 {% endblock %}

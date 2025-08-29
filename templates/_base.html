@@ -27,8 +27,9 @@
         <li class="nav-item">
           <a class="nav-link" href="{% url 'pages:homepage' %}">Home</a>
         </li>
-        <li class="nav-item"><a class="nav-link" href="#">Log in</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Register</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Log in</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'pages:register' %}">Register</a></li>
+
       <ul class="navbar-nav ms-auto">
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="gamesDropdown" role="button"
