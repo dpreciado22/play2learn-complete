@@ -1,0 +1,7 @@
+{% extends "_base.html" %}
+{% block title %}Contact Us{% endblock %}
+{% block main %}
+<h2>Contact Us</h2>
+<form method="post">{% csrf_token %}{{ form.as_p }}<button class="btn btn-primary">Send</button></form>
+<p class="text-muted mt-2">In dev, the email prints to your runserver console.</p>
+{% endblock %}

@@ -8,8 +8,8 @@ class GameScore(models.Model):
 
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="game_scores")
     game_type = models.CharField(max_length=20, choices=GameType.choices, db_index=True)
-    settings = models.JSONField(default=dict, blank=True)  # e.g. {"operation":"x","max":20} or {"word_length":5}
-    finished_at = models.DateTimeField()                   # set this when saving the score
+    settings = models.JSONField(default=dict, blank=True)  
+    finished_at = models.DateTimeField()                  
     final_score = models.IntegerField()
 
     created_at = models.DateTimeField(auto_now_add=True)

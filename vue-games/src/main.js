@@ -1,18 +1,13 @@
 import { createApp } from 'vue';
-import axios from 'axios';
-import VueAxios from 'vue-axios';
+import App from "./App.vue";
 
-import router from './router'; // import our router
-import App from "./App";
+const mountEl = document.getElementById("app");
+if (mountEl) {
+  const submitUrl = mountEl.dataset.submitUrl;
+  const csrfToken = mountEl.dataset.csrfToken;
+  const gameType  = mountEl.dataset.gameType;
 
-// set default Django cookies and headers
-axios.defaults.xsrfCookieName = 'csrftoken';
-axios.defaults.xsrfHeaderName = "X-CSRFTOKEN";
-
-const app = createApp(App); // create our app instance
-
-app.use(router); // tell our app to use our router
-
-app.use(VueAxios, axios); // tell our app to use axios
-
-app.mount("#app"); // mount our app on the div#app element in our template
+  // Make them available to your app as global props
+  const app = createApp(App, { submitUrl, csrfToken, gameType });
+  app.mount("#app");
+}

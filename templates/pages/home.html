@@ -4,4 +4,16 @@
 {% block main %}
   <h2>Welcome to Play2Learn</h2>
   <p>Practice math, challenge your word skills, and track your progress while having fun.</p>
+  {% with reviews=review_list %}
+<div id="reviewsCarousel" class="carousel slide mt-4" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    {% for r in reviews %}
+      <div class="carousel-item {% if forloop.first %}active{% endif %}">
+        <div class="p-4 bg-light rounded">{{ r.text|linebreaksbr }}<div class="mt-2 text-muted">— {{ r.user.username }}</div></div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% endwith %}
+{% endblock %}
 {% endblock %}

@@ -1,7 +1,7 @@
 {% extends "_base_vue.html" %}
-
-{% block title %}Anagram Hunt{% endblock %}
-{% block main %}
-  <h1>Anagram Hunt</h1>
-  {{ block.super }}
-{% endblock %} 
+{% block content %}
+  <div id="app"
+       data-submit-url="{% url 'games:submit-score' %}"
+       data-csrf-token="{{ csrf_token }}"
+       data-game-type="anagram_hunt"></div>
+{% endblock %}
